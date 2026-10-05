@@ -86,8 +86,6 @@ jupyter notebook notebooks/
 - [ ] Conferência final (sessão nova, link do Colab, números do relatório)
 ## 7. Resultados
  
-_A preencher ao final do experimento, com números idênticos às saídas do notebook._
- 
 | Modelo | MAE (val) | RMSE (val) | R² (val) | RMSE (teste) |
 |---|---|---|---|---|
 | Baseline (média) | | | | |
