@@ -19,12 +19,9 @@ O foco é interpretar coeficientes, métricas e resíduos, e distinguir ajuste a
 | **URL da fonte original** | https://archive.ics.uci.edu/dataset/9/auto+mpg |
 | **DOI** | https://doi.org/10.24432/C5859H |
 | **Licença na UCI** | CC BY 4.0 |
-| **Licença exibida no Kaggle** | _PREENCHER após conferir a página_ |
 | **Data de acesso** | 05/10/2026 |
 | **Arquivo utilizado** | `auto-mpg.csv` |
 | **Natureza dos dados** | Reais (não sintéticos) |
-| **Dimensão esperada** | 398 linhas _(conferir no notebook)_ |
-| **Ausentes conhecidos** | `horsepower` _(conferir quantidade e formato no notebook)_ |
  
 **Unidade de observação:** cada linha representa um modelo de veículo.
 **Alvo:** `mpg` (milhas por galão, contínuo).
