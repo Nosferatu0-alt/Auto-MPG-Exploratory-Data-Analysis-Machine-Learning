@@ -1,0 +1,8 @@
+numpy>=1.26
+pandas>=2.1
+matplotlib>=3.8
+scipy>=1.11
+scikit-learn>=1.4        # root_mean_squared_error existe a partir da 1.4 (o notebook tem fallback)
+kagglehub>=0.3           # download opcional do dataset
+jupyterlab>=4.0
+ipykernel>=6.0
