@@ -14,7 +14,7 @@ O foco é interpretar coeficientes, métricas e resíduos, e distinguir ajuste a
 |---|---|
 | **Título** | Auto-mpg dataset |
 | **URL no Kaggle** | https://www.kaggle.com/datasets/uciml/autompg-dataset |
-| **Publicador no Kaggle** | uciml _(confirmar na página)_ |
+| **Publicador no Kaggle** | uciml |
 | **Fonte original** | UCI Machine Learning Repository, *Auto MPG* (Quinlan, 1993), revisado a partir da biblioteca StatLib (Carnegie Mellon) |
 | **URL da fonte original** | https://archive.ics.uci.edu/dataset/9/auto+mpg |
 | **DOI** | https://doi.org/10.24432/C5859H |
@@ -25,8 +25,7 @@ O foco é interpretar coeficientes, métricas e resíduos, e distinguir ajuste a
  
 **Unidade de observação:** cada linha representa um modelo de veículo.
 **Alvo:** `mpg` (milhas por galão, contínuo).
-**Preditores candidatos:** `displacement`, `horsepower`, `weight`, `acceleration` _(a escolha final será justificada no relatório, com base apenas no treino)_.
- 
+**Preditores candidatos:** `displacement`, `horsepower`, `weight`, `acceleration`
 > O arquivo CSV **não** é versionado neste repositório por padrão. Veja a seção 5 para obter os dados.
  
 ## 3. Estrutura do repositório
@@ -71,27 +70,45 @@ jupyter notebook notebooks/
 ## 6. Andamento do projeto
  
 - [x] Escolha do dataset
-- [ ] Pesquisa de aplicação de regressão e leitura da documentação do scikit-learn
-- [ ] Carregamento, inspeção inicial e regras de limpeza
-- [ ] Separação treino / validação / teste
-- [ ] Exploração do treino e hipóteses
-- [ ] Baseline
-- [ ] Regressão linear simples
-- [ ] Regressão linear múltipla
-- [ ] Regressão polinomial (graus 2, 3 e 5)
-- [ ] Escolha do grau por validação
-- [ ] Reajuste final e avaliação no teste
-- [ ] Diagnóstico de resíduos e limitações
-- [ ] Relatório em PDF
-- [ ] Conferência final (sessão nova, link do Colab, números do relatório)
+- [x] Pesquisa de aplicação de regressão e leitura da documentação do scikit-learn
+- [x] Carregamento, inspeção inicial e regras de limpeza
+- [x] Separação treino / validação / teste
+- [x] Exploração do treino e hipóteses
+- [x] Baseline
+- [x] Regressão linear simples
+- [x] Regressão linear múltipla
+- [x] Regressão polinomial (graus 2, 3 e 5)
+- [x] Escolha do grau por validação
+- [x] Reajuste final e avaliação no teste
+- [x] Diagnóstico de resíduos e limitações
+- [x] Relatório em PDF
+- [x] Conferência final (sessão nova, link do Colab, números do relatório)
+- [ ] 
 ## 7. Resultados
  
-| Modelo | MAE (val) | RMSE (val) | R² (val) | RMSE (teste) |
-|---|---|---|---|---|
-| Baseline (média) | | | | |
-| Linear simples | | | | |
-| Linear múltipla | | | | |
-| Polinomial (grau escolhido) | | | | |
+Comparação de desempenho dos modelos de regressão nos conjuntos de treino e validação.
+
+| Modelo | MAE (treino) | RMSE (treino) | R² (treino) | MAE (validação) | RMSE (validação) | R² (validação) |
+|--------|:------------:|:-------------:|:-----------:|:---------------:|:----------------:|:--------------:|
+| Baseline | 6,476 | 7,637 | 0,000 | 7,235 | 8,729 | -0,026 |
+| Regressão Simples | 3,258 | 4,300 | 0,683 | 3,560 | 4,900 | 0,677 |
+| **Regressão Múltipla** | **2,573** | **3,329** | **0,810** | **3,045** | **4,031** | **0,781** |
+| Polinomial (grau 2) | 3,061 | 4,152 | 0,704 | 3,365 | 4,742 | 0,697 |
+| Polinomial (grau 3) | 3,061 | 4,152 | 0,704 | 3,370 | 4,744 | 0,697 |
+| Polinomial (grau 5) | 3,052 | 4,144 | 0,706 | 3,396 | 4,765 | 0,694 |
+
+### Métricas utilizadas
+
+- **MAE** (*Mean Absolute Error*): erro absoluto médio; quanto menor, melhor.
+- **RMSE** (*Root Mean Squared Error*): raiz do erro quadrático médio; penaliza mais os erros grandes.
+- **R²** (*Coeficiente de Determinação*): proporção da variância explicada pelo modelo; quanto mais próximo de 1, melhor.
+
+### Principais conclusões
+
+- **A Regressão Múltipla teve o melhor desempenho** em todas as métricas, tanto no treino quanto na validação (R² de 0,781 na validação).
+- Todos os modelos superaram o **Baseline**, que serve como referência mínima (R² ≈ 0).
+- Os **modelos polinomiais não trouxeram ganho** em relação à regressão múltipla. Aumentar o grau (2, 3 e 5) praticamente não alterou os resultados, indicando que a complexidade extra não é necessária.
+- A pequena diferença entre as métricas de treino e validação indica **ausência de overfitting significativo**.
  
 ## 8. Referências
  
