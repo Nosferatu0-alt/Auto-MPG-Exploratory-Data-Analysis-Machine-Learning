@@ -83,7 +83,7 @@ jupyter notebook notebooks/
 - [x] Diagnóstico de resíduos e limitações
 - [x] Relatório em PDF
 - [x] Conferência final (sessão nova, link do Colab, números do relatório)
-- [ ] 
+
 ## 7. Resultados
  
 Comparação de desempenho dos modelos de regressão nos conjuntos de treino e validação.
