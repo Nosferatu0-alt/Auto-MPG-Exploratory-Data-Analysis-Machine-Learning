@@ -1,5 +1,5 @@
 # Previsão do consumo de combustível de automóveis com regressão linear simples, múltipla e polinomial
-
+#link streamlite:https://auto-mpg-exploratory-data-analysis-machine-learning-dkgunnnrbt.streamlit.app/
 ## Resumo
 
 | Item | Descrição |
